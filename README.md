@@ -3,7 +3,7 @@
 1. 自定义view，在flutter中是CustomPaint。CustomPaint有个painter属性，需要实现CustomPainter进行绘制。
 2. 在CustomPainter中需要实现paint方法绘制。其中Canvas是画布，Size是大小。可以通过canvas.drawLine绘制线，canvas.drawCircle绘制圆点。
 3. 手势控制通过GestureDetector，其中有方法onHorizontalDragDown是水平滚动按下，onHorizontalDragEnd是水平滚动离开，onHorizontalDragUpdate是水平滚动监听。
-
+![示例](https://github.com/lixiaopeng168/FlutterNodeView/blob/master/screent/1594177069198.jpg)
 
 
 ### 属性
