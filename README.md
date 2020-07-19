@@ -4,8 +4,10 @@
 2. 在CustomPainter中需要实现paint方法绘制。其中Canvas是画布，Size是大小。可以通过canvas.drawLine绘制线，canvas.drawCircle绘制圆点。
 3. 手势控制通过GestureDetector，其中有方法onHorizontalDragDown是水平滚动按下，onHorizontalDragEnd是水平滚动离开，onHorizontalDragUpdate是水平滚动监听。
 
+
 ### 效果
-[图片](https://upload-images.jianshu.io/upload_images/5421492-4b65e8ee3b7e07b3.gif?imageMogr2/auto-orient/strip)
+![图片](https://upload-images.jianshu.io/upload_images/5421492-4b65e8ee3b7e07b3.gif?imageMogr2/auto-orient/strip)
+
 
 ### 属性
 | 字段 | 语义 |
