@@ -100,11 +100,10 @@ class LxpCustomNodePainter extends CustomPainter{
   void _scrollStatus(int progress){
 //    timingsCallback;
 //    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-    SchedulerBinding.instance.removeTimingsCallback((timings) { });
+//    SchedulerBinding.instance.removeTimingsCallback((timings) { });
       SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
         switch (nodeScrollType) {
           case NodeScrollType.down:
-//       print("scroll状态按下2  $progress");
             onNodeViewListener?.onScrollDown(config.dx, config.dy, progress);
             break;
           case NodeScrollType.drag:

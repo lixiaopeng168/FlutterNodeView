@@ -93,14 +93,20 @@ class _LxpNodeView extends State<LxpNodeView>{
           ),
         ),
       ),
-      onHorizontalDragDown: (event){
-          _setScrollState(NodeScrollType.down, event.localPosition.dx, event.localPosition.dy,true);
-//        print("水平拖动down ${event.localPosition}   ${event.globalPosition}");
+      onTapDown: (event){
+        _setScrollState(NodeScrollType.down, event.localPosition.dx, event.localPosition.dy,true);
       },
-      onHorizontalDragEnd: (DragEndDetails event){
-          _setScrollState(NodeScrollType.up, 0, 0,false);
-//        print("水平拖动end ");
+      onTapCancel: (){
+        _setScrollState(NodeScrollType.up, 0, 0,false);
       },
+//      onHorizontalDragDown: (event){
+//          _setScrollState(NodeScrollType.down, event.localPosition.dx, event.localPosition.dy,true);
+////        print("水平拖动down ${event.localPosition}   ${event.globalPosition}");
+//      },
+//      onHorizontalDragEnd: (DragEndDetails event){
+//          _setScrollState(NodeScrollType.up, 0, 0,false);
+////        print("水平拖动end ");
+//      },
       onHorizontalDragUpdate: (DragUpdateDetails event){
           _setScrollState(NodeScrollType.drag, event.localPosition.dx, event.localPosition.dy,true);
 //        print("水平拖动update  ${event.localPosition}  ${event.globalPosition}");

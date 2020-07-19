@@ -36,14 +36,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -54,18 +46,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with OnNodeViewListener{
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,25 +60,31 @@ class _MyHomePageState extends State<MyHomePage> with OnNodeViewListener{
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text("${widget.title} ${widget.progress}"),
+        title: Text("NodeView"),
       ),
-      body: Row(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: new Column(
         children: [
-          new Expanded(
-              child: new LxpNodeView(
-                lineHeight: 4,
-                circleRadius: 6,
-                nodePath: "images/trade_node.png",
-                onNodeViewListener: this,
-//              width: sizedBox.width ,
-                height: 130,
-//              nodeSize: new Size(ScreenUtil().setWidth(100), ScreenUtil().setWidth(100)),
-              ),)
+          new Text("进度:${widget.progress}"),
 
+          Row(
+            // Center is a layout widget. It takes a single child and positions it
+            // in the middle of the parent.
+            children: [
+              new Expanded(
+                child: new LxpNodeView(
+                  lineHeight: 4,
+                  circleRadius: 6,
+                  nodePath: "images/trade_node.png",
+                  onNodeViewListener: this,
+//              width: sizedBox.width ,
+                  height: 130,
+//              nodeSize: new Size(ScreenUtil().setWidth(100), ScreenUtil().setWidth(100)),
+                ),)
+
+            ],
+          )
         ],
-      )
+      ) ,
     );
   }
 
@@ -113,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> with OnNodeViewListener{
   void onScrollDrag(double dx, double dy, int progress) {
     // TODO: implement onScrollDrag
     super.onScrollDrag(dx, dy, progress);
+
     widget.progress = "$progress %";
   }
 }
